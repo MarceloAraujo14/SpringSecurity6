@@ -18,8 +18,57 @@ import static com.example.securityapp.model.Role.USER;
 @EnableWebSecurity
 public class SecurityConfig {
 
+//    @Bean
+//    public SecurityFilterChain formLoginAndOauth2Config(HttpSecurity http) throws Exception{
+//        http
+//                .authorizeHttpRequests(auth -> auth
+//                                .requestMatchers("/", "/login", "/resources/**").permitAll()
+//                                .anyRequest().authenticated()
+//                )
+//                .headers(headers -> headers.frameOptions().sameOrigin())
+//                .oauth2Login(oauth -> oauth
+//                        .loginPage("/login")
+//                        .defaultSuccessUrl("/logged"))
+//                .formLogin(login -> login
+//                        .loginPage("/login")
+//                        .defaultSuccessUrl("/logged")
+//                        .loginProcessingUrl("/login")
+//                        .failureForwardUrl("/login?error=true")
+//                        .permitAll())
+//                .logout(
+//                        logout -> logout
+//                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+//                                .logoutSuccessUrl("/").permitAll()
+//                );
+//
+//        return http.build();
+//    }
+
+//    @Bean
+//    public SecurityFilterChain formLogin(HttpSecurity http) throws Exception{
+//        http
+//                .authorizeHttpRequests(auth -> auth
+//                        .requestMatchers("/", "/login", "/resources/**").permitAll()
+//                        .anyRequest().authenticated()
+//                )
+//                .headers(headers -> headers.frameOptions().sameOrigin())
+//                .formLogin(login -> login
+//                        .loginPage("/login")
+//                        .defaultSuccessUrl("/logged")
+//                        .loginProcessingUrl("/login")
+//                        .failureForwardUrl("/login?error=true")
+//                        .permitAll())
+//                .logout(
+//                        logout -> logout
+//                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+//                                .logoutSuccessUrl("/").permitAll()
+//                );
+//
+//        return http.build();
+//    }
+
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain oauth2Login(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers("/", "/login", "/resources/**").permitAll()
@@ -29,12 +78,6 @@ public class SecurityConfig {
                 .oauth2Login(oauth -> oauth
                         .loginPage("/login")
                         .defaultSuccessUrl("/logged"))
-                .formLogin(login -> login
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/logged")
-                        .loginProcessingUrl("/login")
-                        .failureForwardUrl("/login?error=true")
-                        .permitAll())
                 .logout(
                         logout -> logout
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
