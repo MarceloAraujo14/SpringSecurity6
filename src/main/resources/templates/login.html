@@ -11,22 +11,25 @@
 </head>
 <body>
 <div class="container">
-    <form class="form-signin" method="post" th:action="@{/login}">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <p>
-            <label for="username" class="sr-only">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-        </p>
-        <p>
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-        </p>
-        <input name="_csrf" type="hidden" value="I50UwksnJVNB2f5jn4ZtWh4sM0IsPC7_QDcon7764pu0ZyqSFf4soHsQEmJs6Jhb_KtZaytIHnscXUvSIgQc-YbChquHAh2g" />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-    <h2 class="form-signin-heading">Login with OAuth 2.0</h2><table class="table table-striped">
-    <tr><td><a th:href="@{/oauth2/authorization/github}">GitHub</a></td></tr>
-    <tr><td><a th:href="@{/oauth2/authorization/google}">Google</a></td></tr>
-</table>
+
+        <form class="form-signin" method="post" th:action="@{/login}">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <p>
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+            </p>
+            <p>
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            </p>
+            <input name="_csrf" type="hidden" value="I50UwksnJVNB2f5jn4ZtWh4sM0IsPC7_QDcon7764pu0ZyqSFf4soHsQEmJs6Jhb_KtZaytIHnscXUvSIgQc-YbChquHAh2g" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <br>
+            <h4 class="form-signin-heading">Login with OAuth 2.0</h4>
+            <table class="table table-striped">
+            <tr><td><a th:href="@{/oauth2/authorization/github}">GitHub</a></td></tr>
+            <tr><td><a th:href="@{/oauth2/authorization/google}">Google</a></td></tr>
+        </table>
+        </form>
 </div>
 </body></html>
