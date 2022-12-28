@@ -11,7 +11,7 @@ public class GatewayContoller {
 
     @GetMapping
     public String index(){
-        return "index";
+        return "home";
     }
 
     @GetMapping("/login")
