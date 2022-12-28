@@ -19,7 +19,7 @@ import static com.example.securityapp.model.Role.USER;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain formLoginAndOauth2Config(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers("/", "/login", "/resources/**").permitAll()
