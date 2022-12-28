@@ -1,0 +1,30 @@
+spring:
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: ${GITHUB_CID}
+            clientSecret: ${GITHUB_CS}
+          google:
+            clientId: ${GOOGLE_CID}
+            clientSecret: ${GOOGLE_CS}
+
+  datasource:
+    url: jdbc:h2:mem:security
+    username: admin
+    password: admin
+    driverClassName: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org.springframework.security: TRACE
